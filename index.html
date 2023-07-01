@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketchy Etch</title>
+  <!--Josefin Sans font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+  <!--Css and javascript external access-->
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div id="header">
+    <h1 class="header-text">Sketchy Etch</h1>
+  </div>
+  <div id="main-container">
+    <div class="first-content">
+      <div class="grid-board"></div>
+      <div class="remover-button">
+        <button class="erase-btn btn">
+          <img src="assets/eraser.png" alt="erase image for erase button" width="16px">
+          Erase
+        </button>
+        <button class="clear-btn btn">
+          <img src="assets/clear.png" alt="bin image for clear button" width="15px">
+          Clear
+        </button>
+      </div>
+    </div>
+    <div class="second-content">
+      <h3 class="select-text">Select Color</h3>
+      <input type="color" id="color-input">
+      <button class="classic-btn btn">Classic Mode</button>
+      <button class="spectrum-btn btn">Spectrum Mode</button>
+      <button class="darkening-btn btn">Dakening Mode</button>
+      <button class="Brightening-btn btn">Brightening Mode</button>
+      <input type="range">
+      <p class="grid-range"></p>
+    </div>
+  </div>
+  <div id="footer">
+    <img src="/assets/github-mark.png" alt="Github Logo" width="20px">
+    <a href="#" style="text-decoration: none;">
+      <p>HummyDev7</p>
+    </a>
+  </div>
+  
+</body>
+</html>
