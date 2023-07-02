@@ -19,6 +19,7 @@ body {
   font-size: 50px;
 }
 
+/*Footer style declaration*/
 #footer {
   display: flex;
   justify-content: center;
@@ -31,7 +32,8 @@ body {
 
 #main-container {
   display: flex;
-  justify-content: space-evenly;
+  gap: 100px;
+  justify-content: center;
 }
 
 /*Gird board style declarations*/
@@ -70,22 +72,41 @@ body {
   height: 40px;
   background-color: transparent;
   outline: none;
-  border: 2px solid #2A2438;
+  border: 1px solid #2A2438;
   border-radius: 10px;
   font-size: 18px;
   font-weight: 400;
 }
 
 #color-input {
-  border-radius: 30px;
+  border-radius: 35px;
   cursor: pointer;
-  height: 70px;
+  height: 80px;
   width: 140px;
   border: none;
 }
 
-/*This pseudo element allow us to chnage the color borders and so on*/
+/*This pseudo element allow us to change the color borders and so on*/
 #color-input::-webkit-color-swatch {
-  border-radius: 30px;
+  border-radius: 35px;
   border: none;
+}
+
+/*Styling input range*/
+input[type="range"] {
+  border: 1px solid #2A2438;
+  -webkit-appearance: none;
+  width: 170px;
+  height: 11px;
+  border-radius: 5px;
+  background-image: linear-gradient(transparent);
+}
+/*Desining the range slide thumb*/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #2A2438;
+  cursor: pointer;
 }
