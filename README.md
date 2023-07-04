@@ -13,7 +13,7 @@
 
 * Github & Git
 * Visual Studio Code
-* <a href="https://generate-css.com/box-shadow-generator/">Box Shadow Generator</a>
+* <a href="https://generate-css.com/box-shadow-generator/" targe="_blank">Box Shadow Generator</a>
 * Google Fonts
 
 # Feauture
