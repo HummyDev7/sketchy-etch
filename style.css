@@ -42,6 +42,7 @@ body {
   height: 500px;
   width: 500px;
   display: grid;
+  box-shadow: 9px 8px 14px 4px rgba( 42,35,72 , 0.2 ) ;
 }
 
 .remover-button {
@@ -76,11 +77,17 @@ body {
   border-radius: 10px;
   font-size: 18px;
   font-weight: 400;
+  transition: transform .4s;
+  box-shadow: 3px 3px 9px 1px rgba( 92, 92, 92 , 0.25 ) ;
 }
 
 .btn.active {
   background-color: #352F44;
   color: hsl(256, 16%, 87%);
+}
+
+.mode:hover {
+  transform: scale(1.1);
 }
 
 #color-input {
@@ -114,4 +121,18 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: #2A2438;
   cursor: pointer;
+}
+
+
+/*Adding shake animation on clear button*/
+.shake {
+  animation: tilt-n-move-shaking 0.5s;
+}
+
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }

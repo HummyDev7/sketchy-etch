@@ -11,8 +11,8 @@ let selectedMode;
 let colorSelected = "#2a2438";
 let mouseDown = false;
  
-document.body.onmousedown = () => (mouseDown = true);
-document.body.onmouseup = () => (mouseDown = false);
+document.body.onmousedown = () => ( mouseDown = true );
+document.body.onmouseup = () => ( mouseDown = false );
 
 //*FUNCTIONS
 
@@ -21,6 +21,7 @@ const selectMode = ( select ) => { selectedMode = select; };
 const color = ( selectColor ) => { colorSelected = selectColor };
 
 const spectrumMode = function( targetDiv ) {
+  
   let randomColor = Math.floor(Math.random() * 16777215).toString(16).toUpperCase();
   targetDiv.style.backgroundColor = `#${ randomColor }`;
 }
@@ -30,25 +31,31 @@ const classicMode = function( targetDiv ) { targetDiv.style.backgroundColor = co
 const eraserMOde = function( targetDiv ) { targetDiv.style.backgroundColor = "#fefefe"; };
 
 const darkeningMode = function( targetDiv ) { 
-  
-    if ( targetDiv.style.backgroundColor.match( /rgba/ ) ) {
-      let currentOpacity = Number(targetDiv.style.backgroundColor.slice(-4, -1));
-      
-      if ( currentOpacity <= 0.9 ) {
-          targetDiv.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
-      }
 
-  } else if (targetDiv.classList == 'gray' && targetDiv.style.backgroundColor == 'rgb(0, 0, 0)') {
-      return;
-      
+    let currentOpacity = Number(targetDiv.style.backgroundColor.slice(-4, -1));
+
+  if ( currentOpacity <= 0.9 ) {
+          targetDiv.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
   } else {
       targetDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';  
   }
 }
 
-const activateMode = function(e) {
+const brighteningMode = function( targetDiv ) { 
 
-  if (e.type === 'mouseover' && !mouseDown) return;
+  let currentOpacity = Number(targetDiv.style.backgroundColor.slice(-4, -1));
+
+  if ( currentOpacity <= 0.9 ) {
+          targetDiv.style.backgroundColor = `rgba(255, 255, 255, ${ currentOpacity + .1 })`;
+
+  } else {
+      targetDiv.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';  
+  }
+}
+
+const activateMode = function( e ) {
+
+  if ( e.type === 'mouseover' && !mouseDown ) return;
   switch( selectedMode ) {
 
     case 'classic':
@@ -62,6 +69,10 @@ const activateMode = function(e) {
     case 'darkening':
       darkeningMode( this );
       break;
+    
+    case 'brightening':
+      brighteningMode( this );
+      break;
 
     case 'eraser':
       eraserMOde( this );
@@ -70,7 +81,10 @@ const activateMode = function(e) {
 };
 //Function to clear the div
 const clearDiv = ( rmDiv ) => {
+  
   let removeDiv = rmDiv.querySelectorAll('div');
+  clearBtn.classList.add('shake');
+  setTimeout( ()=> { clearBtn.classList.remove("shake")}, 500 );
   removeDiv.forEach( ( rm ) => { rm.style.backgroundColor = "#fefefe" } );
 }
 
@@ -110,15 +124,17 @@ sliderValue.addEventListener("input", ( e ) => {
   creatingGrid( e.target.value, true );
 });
 
-clearBtn.addEventListener('click', () => clearDiv( gridBoard ) );
-
 mode.forEach( ( modes ) => {
 
   modes.addEventListener('click', ( e ) => {
-    selectMode( e.target.value );
+    
+    selectMode( e.target.value);
+    //Add activated button effect
+    document.querySelector('.active')?.classList.remove('active');
+    modes.classList.add('active');
   });
+
 });
 
-selectedColor.addEventListener('input', function( e ) {
-  color( e.target.value );
-});
+clearBtn.addEventListener('click', () => { clearDiv( gridBoard ); } );
+selectedColor.addEventListener('input', function( e ) { color( e.target.value ); });

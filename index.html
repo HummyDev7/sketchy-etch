@@ -16,12 +16,12 @@
   <div id="header">
     <h1 class="header-text">Sketchy Etch</h1>
   </div>
-  <div id="main-container">
+  <div id="main-container" class="container">
     <div class="first-content">
       <div class="grid-board"></div>
       <div class="remover-button" tabindex="-1">
         <button class="eraser-btn btn mode" value="eraser">
-          <img src="assets/eraser.png" alt="erase image for erase button" width="17px">
+          <img src="assets/eraser.png" alt="erase image for erase button" width="17px" class="erasor">
           Eraser
         </button>
         <button class="clear-btn btn">
@@ -36,6 +36,7 @@
       <button class="classic-btn btn mode" value="classic">Classic Mode</button>
       <button class="spectrum-btn btn mode" value="spectrum">Spectrum Mode</button>
       <button class="darkening-btn btn mode" value="darkening">Dakening Mode</button>
+      <button class="brightening-btn btn mode" value="brightening">Brightening Mode</button>
       <input type="range" id="range-input" min="5" max="60" value="16">
       <div id="range-value"></div>
     </div>
