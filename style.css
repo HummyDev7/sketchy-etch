@@ -78,6 +78,11 @@ body {
   font-weight: 400;
 }
 
+.btn.active {
+  background-color: #352F44;
+  color: hsl(256, 16%, 87%);
+}
+
 #color-input {
   border-radius: 35px;
   cursor: pointer;
