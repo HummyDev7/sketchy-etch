@@ -1,7 +1,7 @@
 # Etch a Sketch
 
 * This project is related in the odin project course
-* * Live <a href="https://hummydev7.github.io/one-piece-landing-page/">demo</a>
+* * Live <a href="https://hummydev7.github.io/sketchy-etch/">demo</a>
 
 <h3> Technologies Used:</h3>
 
