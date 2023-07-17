@@ -1,7 +1,7 @@
-# Etch a Sketch
+# The Odin Project | Etch a Sketch
 
 * This project is related in the odin project course
-* * Live <a href="https://hummydev7.github.io/sketchy-etch/">demo</a>
+* Live <a href="https://hummydev7.github.io/sketchy-etch/">demo</a>
 
 <h3> Technologies Used:</h3>
 
@@ -30,6 +30,7 @@
 * Add a mode in which the user can choose to have the grid a border or not
 * You can export / save what you draw
 * You can undo what you just draw
+* Redo the design make it more aesthetic (be more original)
 
 # What i learned
 
